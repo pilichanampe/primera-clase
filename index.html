@@ -38,14 +38,16 @@
                 <h5 style="color: green">Si el texto tiene menos de 50 caracteres</h5>
                 <h5 style="color: red">Si el texto tiene mas de 50 caracteres</h5>
                 <!-- / -->
-            <h2>Cursos <small>[Si no tengo cursos, este titulo no se tiene que mostrar]</small></h2>
+            <h2>Cursos</h2>
                 <ul>
                     <li>[Mostrar de la siguiente manera: <b>*Nombre del curso* - *Fecha de finalización*</b>]</li>
                 </ul>
-            <h2>Proyectos <small>[Si no tengo proyectos, este titulo no se tiene que mostrar]</small></h2>
+                <h3>[Si no tenemos cursos, deberíamos mostrar un mensaje indicandolo]</h3>
+            <h2>Proyectos</h2>
                 <ul>
                     <li>[Mostrar de la siguiente manera: <b>*Nombre del proyecto* - *link hacia el repositorio o demo*</b>]</li>
                 </ul>
+                <h3>[Si no tenemos proyectos, deberíamos mostrar un mensaje indicandolo]</h3>
         </div>
     </div>
     <!-- / -->
@@ -67,9 +69,10 @@
                 // Otros datos
 
                 cssExperience: '[Explicá tu experienca en CSS]', // Modíficá este texto
-                jsExperience: '[Explicá tu experienca en JS]' // Modificá este texto
+                jsExperience: '[Explicá tu experienca en JS]', // Modificá este texto
 
-                // ***AGREGAR VARIABLES***
+                courses: [], // Los objetos deberían tener una forma similar a {title: String, endDate: String}
+                projects: [], // Los objetos deberían tener una forma similar a {title: String, link: String}
             }
         })
     </script>
