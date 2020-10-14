@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primera Clase</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Importación de Vue.js por CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+    <!-- HTML con renderización declarativa -->
+    <div id="app">
+        <div class="wrapper">
+            <h1>Presentación en el curso de Vue.js</h1>
+            <h2>Datos personales</h2>
+            <ul>
+                <li>Nombre Completo: [Cómo el título lo dice se debe ver la concatenación del nombre y el apellido]</li>
+                <li>Edad: [Se debe calcular la edad a partir de la fecha de nacimiento]</li>
+                <li>Lugar de procedencia: [Agregar la variable y el valor para esto]</li>
+                <li>Perfil de github: [Agregar la variable y el valor para esto]</li>
+            </ul>
+            <h2>Experiencia con CSS</h2>
+                <p>{{cssExperience}}</p>
+                <!-- Esto se puede borrar -->
+                <h4>Ayudame con unos indicadores de colores</h4>
+                <h5 style="color: green">Si el texto tiene menos de 50 caracteres</h5>
+                <h5 style="color: red">Si el texto tiene mas de 50 caracteres</h5>
+                <!-- / -->
+            <h2>Experiencia con JS</h2>
+                <p>{{jsExperience}}</p>
+                <!-- Esto se puede borrar -->
+                <h4>Ayudame con unos indicadores de colores</h4>
+                <h5 style="color: green">Si el texto tiene menos de 50 caracteres</h5>
+                <h5 style="color: red">Si el texto tiene mas de 50 caracteres</h5>
+                <!-- / -->
+            <h2>Cursos <small>[Si no tengo cursos, este titulo no se tiene que mostrar]</small></h2>
+                <ul>
+                    <li>[Mostrar de la siguiente manera: <b>*Nombre del curso* - *Fecha de finalización*</b>]</li>
+                </ul>
+            <h2>Proyectos <small>[Si no tengo proyectos, este titulo no se tiene que mostrar]</small></h2>
+                <ul>
+                    <li>[Mostrar de la siguiente manera: <b>*Nombre del proyecto* - *link hacia el repositorio o demo*</b>]</li>
+                </ul>
+        </div>
+    </div>
+    <!-- / -->
+
+    <!-- Su JS aquí debajo por favor... -->
+    <script>
+        var app = new Vue({
+            el: '#app', // Este será el id de la tarjeta contenedora de nuestra App Vue.js
+            data: {
+
+                // Datos personales
+
+                firstName: '',
+                lastName: '',
+                yearOfBirth: 2013,
+
+                // ***AGREGAR VARIABLES***
+
+                // Otros datos
+
+                cssExperience: '[Explicá tu experienca en CSS]', // Modíficá este texto
+                jsExperience: '[Explicá tu experienca en JS]' // Modificá este texto
+
+                // ***AGREGAR VARIABLES***
+            }
+        })
+    </script>
+    <!-- / -->
+</body>
+</html>
