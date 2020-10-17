@@ -46,7 +46,7 @@
             <!-- <h3>[Si no tenemos cursos, deberíamos mostrar un mensaje indicandolo]</h3> -->
             <h2>Proyectos</h2>
             <ul>
-                <li v-for="project in projects"><b>{{project.title}} - </b><a v-bind:href="gitHub" target="_blank">{{ project.link }}</a></li>
+                <li v-for="project in projects"><b>{{project.title}} - </b><a v-bind:href="project.link" target="_blank">{{ project.link }}</a></li>
             </ul>
                 <!-- <h3>[Si no tenemos proyectos, deberíamos mostrar un mensaje indicandolo]</h3> -->
         </div>
