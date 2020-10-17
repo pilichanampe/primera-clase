@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;800&display=swap" rel="stylesheet">
     <title>Primera Clase</title>
 
     <!-- Estilos -->
@@ -19,35 +20,35 @@
             <h1>Presentación en el curso de Vue.js</h1>
             <h2>Datos personales</h2>
             <ul>
-                <li>Nombre Completo: [Cómo el título lo dice se debe ver la concatenación del nombre y el apellido]</li>
-                <li>Edad: [Se debe calcular la edad a partir de la fecha de nacimiento]</li>
-                <li>Lugar de procedencia: [Agregar la variable y el valor para esto]</li>
-                <li>Perfil de github: [Agregar la variable y el valor para esto]</li>
+                <li><b>Nombre completo:</b> {{firstName}} {{lastName}}.</li>
+                <li><b>Edad:</b> {{ 2020 - yearOfBirth }}.</li>
+                <li><b>Lugar de procedencia:</b> {{ placeOfBirth }}, {{ nacionality }}.</li>
+                <li><b>Perfil de GitHub:</b> <a v-bind:href="gitHub" target="_blank">{{ gitHub }}</a></li>
             </ul>
             <h2>Experiencia con CSS</h2>
-                <p>{{cssExperience}}</p>
+                <p :style="lessThanFifty ? 'color: green' : 'color: #EB3F33'">{{cssExperience}}</p>
                 <!-- Esto se puede borrar -->
-                <h4>Ayudame con unos indicadores de colores</h4>
+                
+                <!-- <h4>Ayudame con unos indicadores de colores</h4>
                 <h5 style="color: green">Si el texto tiene menos de 50 caracteres</h5>
-                <h5 style="color: red">Si el texto tiene mas de 50 caracteres</h5>
-                <!-- / -->
+                <h5 style="color: red">Si el texto tiene mas de 50 caracteres</h5>/ -->
             <h2>Experiencia con JS</h2>
-                <p>{{jsExperience}}</p>
+                <p :style="moreThanFifty ? 'color: #EB3F33' : 'color: green'">{{jsExperience}}</p>
                 <!-- Esto se puede borrar -->
-                <h4>Ayudame con unos indicadores de colores</h4>
+                
+                <!--<h4>Ayudame con unos indicadores de colores</h4>
                 <h5 style="color: green">Si el texto tiene menos de 50 caracteres</h5>
-                <h5 style="color: red">Si el texto tiene mas de 50 caracteres</h5>
-                <!-- / -->
+                <h5 style="color: red">Si el texto tiene mas de 50 caracteres</h5> / -->
             <h2>Cursos</h2>
-                <ul>
-                    <li>[Mostrar de la siguiente manera: <b>*Nombre del curso* - *Fecha de finalización*</b>]</li>
-                </ul>
-                <h3>[Si no tenemos cursos, deberíamos mostrar un mensaje indicandolo]</h3>
+            <ul>
+                <li v-for="course in courses"><b>{{course.title}} - </b>{{ course.endDate }}</li>
+            </ul>
+            <!-- <h3>[Si no tenemos cursos, deberíamos mostrar un mensaje indicandolo]</h3> -->
             <h2>Proyectos</h2>
-                <ul>
-                    <li>[Mostrar de la siguiente manera: <b>*Nombre del proyecto* - *link hacia el repositorio o demo*</b>]</li>
-                </ul>
-                <h3>[Si no tenemos proyectos, deberíamos mostrar un mensaje indicandolo]</h3>
+            <ul>
+                <li v-for="project in projects"><b>{{project.title}} - </b><a v-bind:href="gitHub" target="_blank">{{ project.link }}</a></li>
+            </ul>
+                <!-- <h3>[Si no tenemos proyectos, deberíamos mostrar un mensaje indicandolo]</h3> -->
         </div>
     </div>
     <!-- / -->
@@ -60,19 +61,43 @@
 
                 // Datos personales
 
-                firstName: '',
-                lastName: '',
-                yearOfBirth: 2013,
-
+                firstName: 'Pilar',
+                lastName: 'Chanampe',
+                yearOfBirth: 1989,
                 // ***AGREGAR VARIABLES***
+                placeOfBirth: 'La Rioja',
+                nacionality: 'Argentina',
+                gitHub: 'https://github.com/pilichanampe',
+                
 
                 // Otros datos
 
-                cssExperience: '[Explicá tu experienca en CSS]', // Modíficá este texto
-                jsExperience: '[Explicá tu experienca en JS]', // Modificá este texto
-
-                courses: [], // Los objetos deberían tener una forma similar a {title: String, endDate: String}
-                projects: [], // Los objetos deberían tener una forma similar a {title: String, link: String}
+                cssExperience: 'CSS puro, variables CSS, Bulma, Bootstrap.', // Modíficá este texto
+                jsExperience: 'Vanilla JavaScript, Web Components, Node.js, jQuery, Angular (basic), React (basic), Vue.js (basic).', // Modificá este texto
+                lessThanFifty: true,
+                moreThanFifty: true,                
+                courses: [
+                    {title: 'Docta Devs - Vue.js', endDate: 'Cursando.'},
+                    {title: 'Docta Devs - Desarrollo Web Full Stack', endDate: '2020'},
+                    {title: 'MeT CBa - MetCaMP UX UI 2020', endDate: '2020'},
+                    {title: 'A Cloud Guru - AWS Certified Cloud Practitioner 2020', endDate: '2020'},
+                    {title: 'Acámica - Desarrollo Web Full Stack', endDate: '2019'},
+                ], // Los objetos deberían tener una forma similar a {title: String, endDate: String}
+                projects: [
+                    {title: 'App de entrenamiento - Web Components & Node.js', link: 'https://github.com/pilichanampe/tabifit-app'},
+                    {title: 'Tracker Watch - Web Components', link: 'https://pilichanampe.github.io/tracker-watch/'},
+                    {title: 'Calculadora - JS', link: 'https://pilichanampe.github.io/js-calculator/'},
+                    {title: 'Task Manager - React', link: 'https://github.com/pilichanampe/react-lab/tree/master/task-manager'},
+                    {title: 'Budget App - Angular', link: 'https://github.com/pilichanampe/react-lab/tree/master/task-manager'},
+                    {title: 'Pixel Art - JS', link: 'https://pilichanampe.github.io/pixel-art-dp/'},
+                    {title: 'Rompecabezas - JS', link: ' https://pilichanampe.github.io/rompecabezas-dp/'},
+                    {title: 'Home-Banking - JS', link: 'https://pilichanampe.github.io/home-banking-dp/'},
+                    {title: 'Art Landing Page - HTML5 & CSS3', link: 'https://pilichanampe.github.io/art-landing-page/'},
+                    {title: 'McDoctas - HTML5, CSS3 & some JS', link: 'https://codepen.io/pilichanampe/full/zYvZaGW'},
+                    {title: 'Login Form - HTML5 y CSS3', link: 'https://codepen.io/pilichanampe/pen/bGdyBPG'},
+                    {title: 'Portada Libro - HTML5 & CSS3', link: 'https://codepen.io/pilichanampe/full/RwPvWMV'},
+                    {title: 'Perfil Personal - HTML5 & CSS3', link: 'https://codepen.io/pilichanampe/full/OJVroeL'}
+                ], // Los objetos deberían tener una forma similar a {title: String, link: String}
             }
         })
     </script>

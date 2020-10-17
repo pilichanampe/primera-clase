@@ -1,0 +1,53 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 0;	
+	font-family: 'Nunito', sans-serif;	
+}
+
+body {
+  background: #088ec7;
+  background: linear-gradient(90deg, #0ba8e9 2%, #22c87b 28%, #00f9ff 92%);
+}
+
+
+
+#app {
+  background-color:#fafafa;
+  padding: 45px;
+  border-radius: 25px;
+  box-shadow: 3px 9px 22px 6px rgba(0,0,0,0.4);
+  margin: 30px;
+}
+h1 {
+  font-size: 3rem;
+  color:  #0d7e8d;
+}
+
+h2 {
+  color: #0081A7;
+}
+
+li {
+  color:#273849; 
+}
+
+li b {
+  font-weight: 600;
+  color:  #0a3c97;
+}
+
+a {
+  text-decoration: none;
+  color: #5568be;
+}
+
+a:hover {
+	text-decoration-line: underline;
+}
